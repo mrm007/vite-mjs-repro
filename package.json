@@ -1,0 +1,26 @@
+{
+  "name": "vite-mjs-repro",
+  "private": true,
+  "version": "0.0.0",
+  "main": "server.js",
+  "scripts": {
+    "patch": "sed -i '' 's/\"__patchedDependencies\"/\"patchedDependencies\"/g' package.json",
+    "unpatch": "sed -i '' 's/\"patchedDependencies\"/\"__patchedDependencies\"/g' package.json",
+    "vite3": "pnpm install vite@3 && pnpm start",
+    "vite4": "pnpm unpatch && pnpm install vite@4 && pnpm start",
+    "vite4:patch": "pnpm run patch && pnpm install vite@4 && pnpm start"
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "^1.9.2",
+    "express": "^4.18.2",
+    "typescript": "^4.9.4",
+    "uuid": "^9.0.0",
+    "vite": "^4.0.1"
+  },
+  "packageManager": "pnpm@7.18.2",
+  "pnpm": {
+    "__patchedDependencies": {
+      "@vanilla-extract/css@1.9.2": "patches/@vanilla-extract__css@1.9.2.patch"
+    }
+  }
+}

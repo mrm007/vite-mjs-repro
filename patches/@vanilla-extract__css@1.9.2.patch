@@ -1,0 +1,36 @@
+diff --git a/adapter/dist/vanilla-extract-css-adapter.browser.esm.js b/adapter/dist/vanilla-extract-css-adapter.browser.esm.mjs
+similarity index 100%
+rename from adapter/dist/vanilla-extract-css-adapter.browser.esm.js
+rename to adapter/dist/vanilla-extract-css-adapter.browser.esm.mjs
+diff --git a/adapter/dist/vanilla-extract-css-adapter.esm.js b/adapter/dist/vanilla-extract-css-adapter.esm.mjs
+similarity index 100%
+rename from adapter/dist/vanilla-extract-css-adapter.esm.js
+rename to adapter/dist/vanilla-extract-css-adapter.esm.mjs
+diff --git a/adapter/package.json b/adapter/package.json
+index 668d38a47dbd5088a990391126bb256bee8cf961..4579736b09e119a7f795d65e08cf45e38b3bdbaa 100644
+--- a/adapter/package.json
++++ b/adapter/package.json
+@@ -1,19 +1,19 @@
+ {
+   "main": "dist/vanilla-extract-css-adapter.cjs.js",
+-  "module": "dist/vanilla-extract-css-adapter.esm.js",
++  "module": "dist/vanilla-extract-css-adapter.esm.mjs",
+   "browser": {
+     "./dist/vanilla-extract-css-adapter.cjs.js": "./dist/vanilla-extract-css-adapter.browser.cjs.js",
+-    "./dist/vanilla-extract-css-adapter.esm.js": "./dist/vanilla-extract-css-adapter.browser.esm.js"
++    "./dist/vanilla-extract-css-adapter.esm.mjs": "./dist/vanilla-extract-css-adapter.browser.esm.mjs"
+   },
+   "sideEffects": false,
+   "exports": {
+     "./package.json": "./package.json",
+     ".": {
+       "browser": {
+-        "module": "./dist/vanilla-extract-css-adapter.browser.esm.js",
++        "module": "./dist/vanilla-extract-css-adapter.browser.esm.mjs",
+         "default": "./dist/vanilla-extract-css-adapter.browser.cjs.js"
+       },
+-      "module": "./dist/vanilla-extract-css-adapter.esm.js",
++      "module": "./dist/vanilla-extract-css-adapter.esm.mjs",
+       "default": "./dist/vanilla-extract-css-adapter.cjs.js"
+     }
+   }

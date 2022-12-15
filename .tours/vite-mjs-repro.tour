@@ -1,0 +1,62 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "vite-mjs-repro",
+  "steps": [
+    {
+      "file": "package.json",
+      "description": "Install dependencies",
+      "line": 1
+    },
+    {
+      "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
+      "description": "Add a conditional breakpoint with condition `id.includes('css/adapter') && options.mainFields[0] === 'main'`.\n\nThe second part of the condition ensures we're coming from `ssrImport()`",
+      "line": 22846
+    },
+    {
+      "file": "package.json",
+      "description": "[Open a debug terminal](command:extension.js-debug.createDebuggerTerminal) and start the server with Vite 4:\n\n```\npnpm vite4:patch\n```\n\nThen navigate to <http://localhost:5173/vanilla>",
+      "line": 11
+    },
+    {
+      "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
+      "description": "We should be back here, paused on the breakpoint.\n\nLet's step over the next `if` statement",
+      "line": 22846
+    },
+    {
+      "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
+      "description": "`entryPoint` is now resolved to `'./dist/vanilla-extract-css-adapter.esm.mjs'`, which makes sense.\n\nSkipping over the next `if` statement because `targetWeb === false`...",
+      "line": 22851
+    },
+    {
+      "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
+      "description": "...takes us here.\n\nBecause `entryPoint` ends with `.mjs` the condition is true and `entryPoint` will become `'dist/vanilla-extract-css-adapter.cjs.js'`, the value from `package.json#main`...",
+      "line": 22894,
+      "selection": {
+        "start": {
+          "line": 22894,
+          "character": 28
+        },
+        "end": {
+          "line": 22894,
+          "character": 55
+        }
+      }
+    },
+    {
+      "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
+      "description": "...and the package resolves to the CJS version.",
+      "line": 22927
+    },
+    {
+      "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
+      "description": "The thing is, in Vite 3 `entryPoint` resolves to `'./dist/vanilla-extract-css-adapter.cjs.js'` so this MJS to CJS conversion never happens...",
+      "line": 22851
+    },
+    {
+      "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
+      "description": "...because we had `isRequire: true` in Vite 3",
+      "line": 53172
+    }
+  ],
+  "ref": "main"
+}
