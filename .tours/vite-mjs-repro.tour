@@ -9,7 +9,7 @@
     },
     {
       "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
-      "description": "Add a conditional breakpoint with condition `id.includes('css/adapter') && options.mainFields[0] === 'main'`.\n\nThe second part of the condition ensures we're coming from `ssrImport()`",
+      "description": "Add a conditional breakpoint with condition `id.includes('css/adapter') && options.mainFields[0] === 'main'`. We'll come back here after the next step.\n\n(the second part of the condition ensures we're coming from `ssrImport()`)",
       "line": 22846
     },
     {
