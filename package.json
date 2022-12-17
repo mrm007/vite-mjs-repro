@@ -7,8 +7,8 @@
     "patch": "sed -i '' 's/\"__patchedDependencies\"/\"patchedDependencies\"/g' package.json",
     "unpatch": "sed -i '' 's/\"patchedDependencies\"/\"__patchedDependencies\"/g' package.json",
     "vite3": "pnpm install vite@3 && pnpm start",
-    "vite4": "pnpm unpatch && pnpm install vite@4 && pnpm start",
-    "vite4:patch": "pnpm run patch && pnpm install vite@4 && pnpm start"
+    "vite4": "pnpm unpatch && pnpm install vite@4.0.1 && pnpm start",
+    "vite4:patch": "pnpm run patch && pnpm install vite@4.0.1 && pnpm start"
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.9.2",

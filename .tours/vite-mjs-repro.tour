@@ -20,7 +20,7 @@
     {
       "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
       "description": "We should be back here, paused on the breakpoint.\n\nLet's step over the next `if` statement",
-      "line": 22846
+      "line": 22847
     },
     {
       "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
@@ -50,7 +50,7 @@
     {
       "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
       "description": "The thing is, in Vite 3 `entryPoint` resolves to `'./dist/vanilla-extract-css-adapter.cjs.js'` so this MJS to CJS conversion never happens...",
-      "line": 22851
+      "line": 22850
     },
     {
       "file": "node_modules/.pnpm/vite@4.0.1/node_modules/vite/dist/node/chunks/dep-2285ba4f.js",
